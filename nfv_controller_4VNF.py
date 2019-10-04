@@ -52,7 +52,7 @@ import random as R
 
 SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
 
-configFile = os.path.join(SCRIPT_PATH, "nfv.config")
+configFile = os.path.join(SCRIPT_PATH, "4nfv.config")
 
 print "configFile", configFile
 
