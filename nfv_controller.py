@@ -134,13 +134,13 @@ class nfv_controller(app_manager.RyuApp):
         #return -1
 
         # if generated number is > X, then send to VNF1, else send to VNF2
-        if ran > (3/4)X:
+        if ran > ((3/4)*X):
             return vnf1_interface
-        elif ran <= (3/4)X and ran > (1/2)X:
+        elif ran <= ((3/4)*X) and ran > ((1/2)*X):
             return vnf2_interface
-        elif ran <= (1/2)X and ran > (1/4)X:
+        elif ran <= ((1/2)*X) and ran > ((1/4)*X):
             return vnf3_interface
-        elif ran<= (1/4)X:
+        elif ran <= ((1/4)*X):
             return vnf4_interface
         else:
             self.logger.info("Error reading PI-controller generated load file! Default using vnf1 ")
