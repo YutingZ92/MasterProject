@@ -4,11 +4,20 @@
     <meta charset="utf-8">
     <title>My test page</title>
     <script type="text/javascript">
+
       var c=document.getElementById("myCanvas");
       var cxt=c.getContext("2d");
       cxt.fillStyle="#FF0000";
-      cxt.fillRect(0,0,150,75);
+      cxt.beginPath();
+      cxt.arc(70,18,15,0,Math.PI*2,true);
+      cxt.closePath();
+      cxt.fill();
+
     </script>
+    
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;">
+      Your browser does not support the canvas element.
+    </canvas>
   </head>
     
     <p>working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.</p>
