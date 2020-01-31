@@ -33,7 +33,17 @@
                                 activeLastPointToolip(chart);
                                 setInterval(function () {
                                         var x = (new Date()).getTime(), // 获取当前时间
-                                                y = Math.random();          // 随机值
+                                                y = function getLog() { 
+                                                    $.ajax({ 
+                                                    url: 'logfile.txt', 
+                                                    dataType: 'text', 
+                                                    success: function(text) { 
+                                                    $("#containerDiv").text(text); 
+                                                    setTimeout(getLog, 3000); // refresh every 3 seconds 
+                                                        } 
+                                                     }) 
+                                                 } 
+          // 随机值
                                         series.addPoint([x, y], true, true);
                                         activeLastPointToolip(chart);
                                 }, 1000);
