@@ -82,7 +82,16 @@
                         for (i = -19; i <= 0; i += 1) {
                                 data.push({
                                         x: time + i * 1000,
-                                        y: Math.random()
+                                        y: function getLog() { 
+                                                    $.ajax({ 
+                                                    url: 'logfile.txt', 
+                                                    dataType: 'text', 
+                                                    success: function(text) { 
+                                                    $("#containerDiv").text(text); 
+                                                    setTimeout(getLog, 3000); // refresh every 3 seconds 
+                                                        } 
+                                                     }) 
+                                                 } 
                                 });
                         }
                         return data;
