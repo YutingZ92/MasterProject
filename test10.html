@@ -179,8 +179,11 @@
             }
 
             $(document).ready(function() {
-            drawChart();
-            window.setInterval(inputData, 1 * 60000);
+                console.log( "OK1" );
+                drawChart();
+                console.log( "OK3" );
+                window.setInterval(inputData, 1 * 60000);
+                console.log( "OK2" );
  
             });
             
