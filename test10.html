@@ -15,6 +15,10 @@
         <script>
             var chartSeries = new Array();
             var prevTime = "";
+            function removeChartAttr() {
+                $('#container').removeAttr();
+               }
+
             function creatDynamicChartOptions(nodeData){
                 Highcharts.setOptions({
                 global: {
