@@ -9,8 +9,8 @@
         <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
     </head>
     <body>
-        <div id="context_chart"></div>
-        //<div id="container" style="min-width:400px;height:400px"></div>
+        
+        <div id="container" style="min-width:400px;height:400px"></div>
         <script>
             var chartSeries = new Array();
             var prevTime = "";
@@ -158,8 +158,8 @@
                 });
 
                 var highchart_options = creatDynamicChartOptions(inputTxt);
-                $('#context_chart').show();
-                $('#context_chart').highcharts(highchart_options);
+                $('#container').show();
+                $('#container').highcharts(highchart_options);
                 var chart = $('#context_chart').highcharts();
             }
 
