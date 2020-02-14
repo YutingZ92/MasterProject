@@ -89,26 +89,26 @@ function updateChart(count) {
 	//count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
-    var currentMinute = currentDate.getTime() - currentDate.getSeconds() * 1000;
+    var currentMinute = currentDate.getTime();
     var i;
 	for (i = -12; i < 0; i++) {
 		
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time + i * 60000,
+			x : currentMinute + i * 10000,
             y : Math.random()
 		});
 		dataPoints2.push({
-			x: time + i * 60000,
+			x: currentMinute + i * 10000,
             y : Math.random()
 		});
 		dataPoints3.push({
-			x: time + i * 60000,
+			x: currentMinute + i * 10000,
             y : Math.random()
 		});
 		dataPoints4.push({
-			x: time + i * 60000,
+			x: currentMinute + i * 10000,
 			//y: yValue4
 			y : Math.random()
 		});
