@@ -75,19 +75,19 @@ function toggleDataSeries(e) {
 	e.chart.render();
 }
 
-var updateInterval = 6000;
+var updateInterval = 600;
 // initial value
 var yValue1 = 0;
 var yValue2 = 0;
 var yValue3 = 0;
 var yValue4 = 0;
 
-var time = new Date();
+var time = new Date;
 
 
 function updateChart(count) {
-	count = count || 1;
-	var deltaY1, deltaY2, deltaY3;
+	//count = count || 1;
+	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
     var currentMinute = currentDate.getTime() - currentDate.getSeconds() * 1000;
     var i;
@@ -108,7 +108,7 @@ function updateChart(count) {
             y : Math.random()
 		});
 		dataPoints4.push({
-			x: new Date(),
+			x: time + i * 60000,
 			//y: yValue4
 			y : Math.random()
 		});
