@@ -75,7 +75,7 @@ function toggleDataSeries(e) {
 	e.chart.render();
 }
 
-var updateInterval = 1000;
+var updateInterval = 6000;
 // initial value
 var yValue1 = 0;
 var yValue2 = 0;
@@ -92,7 +92,7 @@ function updateChart(count) {
     var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     var i;
 	for (i = -12; i < 0; i++) {
-		
+		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
 		dataPoints1.push({
