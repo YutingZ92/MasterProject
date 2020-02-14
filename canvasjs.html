@@ -91,12 +91,12 @@ function updateChart(count) {
 	var currentDate = new Date();
     var currentMinute = currentDate.getTime();
     var i;
-	for (i = -12; i < 0; i++) {
+	for (i = -12; i <=0; i++) {
 		
 
 		// pushing the new values
 		dataPoints1.push({
-			x : currentMinute + i * 10000,
+			x : time,
             y : Math.random()
 		});
 		dataPoints2.push({
