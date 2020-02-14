@@ -82,7 +82,7 @@ var yValue2 = 0;
 var yValue3 = 0;
 var yValue4 = 0;
 
-var time = new Date;
+var time = new Date();
 
 
 function updateChart(count) {
@@ -96,7 +96,7 @@ function updateChart(count) {
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time,
+			x : new Date(),
             y : Math.random()
 		});
 		dataPoints2.push({
