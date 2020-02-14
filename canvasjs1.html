@@ -8,7 +8,7 @@ var dataPoints1 = [];
 var dataPoints2 = [];
 var dataPoints3 = [];
 var dataPoints4 = [];
-
+var dps = [];
 var options = {
 	title: {
 		text: "CPU"
@@ -75,13 +75,13 @@ function toggleDataSeries(e) {
 	e.chart.render();
 }
 
-var updateInterval = 6000;
+var updateInterval = 1000;
 // initial value
 var yValue1 = 0;
 var yValue2 = 0;
 var yValue3 = 0;
 var yValue4 = 0;
-
+var dataLength = 50; // number of dataPoints visible at any point 
 var time = new Date();
 
 
@@ -91,7 +91,7 @@ function updateChart(count) {
 	var currentDate = new Date();
     var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     var i;
-	for (i = -12; i < 0; i++) {
+	for (i = 0; i < count; i++) {
 		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
@@ -112,6 +112,20 @@ function updateChart(count) {
 			//y: yValue4
 			y : Math.random()
 		});
+		
+		if(dataPoints1.length > dataLength){
+			dataPoints1.shift();
+		}
+		if(dataPoints2.length > dataLength){
+			dataPoints2.shift();
+		}
+		if(dataPoints3.length > dataLength){
+			dataPoints3.shift();
+		}
+		if(dataPoints4.length > dataLength){
+			dataPoints4.shift();
+		}
+		
 	}
 	//chart.options.data[0].dataPoints.push({x: new Date(), y: 5});
 	// updating legend text with  updated with y Value 
@@ -128,7 +142,7 @@ function updateChart(count) {
 
 
 // generates first set of dataPoints 
-updateChart(100);
+updateChart(dataLength);
 setInterval(function () { updateChart() }, updateInterval);
 
 
