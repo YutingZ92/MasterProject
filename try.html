@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"><link rel="icon" href="https://static.jianshukeji.com/highcharts/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="jquery-1.9.1.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/exporting.js"></script>
+        <script src="https://img.hcharts.cn/highcharts-plugins/highcharts-zh_CN.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>    </head>
+    <body>
+        <div id="container" style="min-width:400px;height:400px"></div>
+        <script>
+            var chartSeries = new Array();
+            var prevTime = "";
+            function creatDynamicChartOptions(nodeData){
+                Highcharts.setOptions({
+                global: {
+                    useUTC: false
+                }
+            });
+                var chart = Highcharts.chart('container', {
+                    chart: {
+                    type: 'spline',
+                    marginRight: 10,
+                    events: {
+                        load: function () {
+                                var series = this.series[0],
+                                        chart = this;
+                                activeLastPointToolip(chart);
+                        }
+                    }
+                },
+
+                title: {
+                    text: 'CPU %'
+                },
+
+                xAxis: {
+                    title: {
+                        text: 'Time'
+                    },
+                    type: 'datetime',
+                    tickPixelInterval: 150,
+                    formatter: function () {
+                        return Highcharts.dateFormat('%H:%M:%S', this.value);
+                    }
+
+                },
+                yAxis: {
+                    title: {
+                        text: 'CPU %'
+                    }
+                },
+                tooltip: {
+                formatter: function () {
+                        return '<b>' + this.series.name + '</b><br/>' + 'Time: '
+                                + Highcharts.dateFormat('%Y-%m-%d %H:%M:%S', this.x) + '<br/>' + 'Value: '
+                                + Highcharts.numberFormat(this.y, 1);
+                    }
+                },
+                legend: {
+                    enabled: true,
+                    align: 'center',
+                    verticalAlign : 'bottom',
+                    x: 0,
+                    y: 0
+                },
+                series: []
+            };
+           // $.each(nodeData.series, function(index, value) {
+               // highchartOptions.series.push({
+                   // name : value.name,
+                    //data : value.data,
+                    //lineWidth : 4,
+                //});
+           // });
+ 
+            return highchartOptions;
+            }
+
+            function inputData(data_time, data_txt){
+                if(data_time == prevTime)
+                    return;
+
+                $.each(data_txt, function(index, val) {
+                    chartSeries[index].addPoint([data_time, val], true, true);
+                });
+                prevTime = data_time; //update 
+            }
+
+            fuction drawLine(){
+                var inputTxt = {
+                    series: [],
+                };
+                var currentDate = new Date();
+                var x=currentDate.getTime() - currentDate.getSeconds() * 1000;
+                var multipleNodeData = [];
+                multipleNodeData.push(Math.random());
+                multipleNodeData.push(Math.random());
+                multipleNodeData.push(Math.random());
+                multipleNodeData.push(Math.random());
+
+                inputData(x,multipleNodeData);
+
+            }
+
+            fuction drawChart(){
+                var currentDate = new Date();
+                var cuurentMinute = currentDate.getTime()-currentDate.getSeconds()*1000;
+                var node1 = [], time = currentMinute, i;
+                for(i=-19; i<=0; i++){
+                    node1.push({
+                        x: time + i * 60000,
+                        y: [3,3,3,3,3,3,3,3,3]
+                    });
+                }
+                inputTxt.series.push({
+                    name: "Node1",
+                    data: node1
+                });
+
+                var node2 = [], time = currentMinute, i;
+                for(i=-19; i<=0; i++){
+                    node2.push({
+                        x: time + i * 60000,
+                        y: [4,4,4,4,4,4,4,4,4]
+                    });
+                }
+                inputTxt.series.push({
+                    name: "Node2",
+                    data: node2
+                });
+
+                var node3 = [], time = currentMinute, i;
+                for(i=-19; i<=0; i++){
+                    node3.push({
+                        x: time + i * 60000,
+                        y: [5,5,5,5,5,5,5,5,5]
+                    });
+                }
+                inputTxt.series.push({
+                    name: "Node3",
+                    data: node3
+                });
+
+                var node4 = [], time = currentMinute, i;
+                for(i=-19; i<=0; i++){
+                    node4.push({
+                        x: time + i * 60000,
+                        y: [6,6,6,6,6,6,6,6,6]
+                    });
+                }
+                inputTxt.series.push({
+                    name: "Node4",
+                    data: node4
+                });
+
+                var highchart_options = creatDynamicChartOptions(inputTxt);
+                $('#context_chart').show();
+                $('#context_chart').highcharts(highchart_options);
+                var chart = $('#context_chart').highcharts();
+            }
+
+            $(document).ready(function() {
+            drawChart();
+            window.setInterval(inputData, 1 * 60000);
+ 
+            });
+            
+        </script>
+    </body>
+</html>
