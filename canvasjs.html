@@ -11,13 +11,13 @@ var dataPoints4 = [];
 
 var options = {
 	title: {
-		text: "Electricity Generation in Turbine"
+		text: "CPU %"
 	},
 	axisX: {
 		title: "chart updates every 2 secs"
 	},
 	axisY: {
-		suffix: "Wh",
+		suffix: "%",
 		includeZero: false
 	},
 	toolTip: {
@@ -31,7 +31,7 @@ var options = {
 		itemclick: toggleDataSeries
 	},
 	data: [{
-		type: "line",
+		type: "spline",
 		xValueType: "dateTime",
 		yValueFormatString: "##.00%",
 		xValueFormatString: "hh:mm:ss TT",
@@ -40,21 +40,21 @@ var options = {
 		dataPoints: dataPoints1
 	},
 	{
-		type: "line",
+		type: "spline",
 		xValueType: "dateTime",
 		yValueFormatString: "##.00%",
 		showInLegend: true,
 		name: "Node 2",
 		dataPoints: dataPoints2
 	}, {
-		type: "line",
+		type: "spline",
 		xValueType: "dateTime",
 		yValueFormatString: "##.00%",
 		showInLegend: true,
 		name: "Node 3",
 		dataPoints: dataPoints3
 	},{
-		type: "line",
+		type: "spline",
 		xValueType: "dateTime",
 		yValueFormatString: "##.00%",
 		showInLegend: true,
@@ -115,16 +115,16 @@ function updateChart(count) {
 	}
 	//chart.options.data[0].dataPoints.push({x: new Date(), y: 5});
 	// updating legend text with  updated with y Value 
-	options.data[0].legendText = "Turbine 1 : " + yValue1 + "Wh";
-	options.data[1].legendText = "Turbine 2 : " + yValue2 + "Wh";
-	options.data[2].legendText = "Turbine 3 : " + yValue3 + "Wh";
-	options.data[3].legendText = "Turbine 4 : " + yValue3 + "Wh";
+	//options.data[0].legendText = "Turbine 1 : " + yValue1 + "Wh";
+	//options.data[1].legendText = "Turbine 2 : " + yValue2 + "Wh";
+	//options.data[2].legendText = "Turbine 3 : " + yValue3 + "Wh";
+	//options.data[3].legendText = "Turbine 4 : " + yValue3 + "Wh";
 	$("#chartContainer").CanvasJSChart().render();
 }
 
-function updateData() {
-	$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart="+xValue+"&ystart="+yValue+"&length="+newDataCount+"&type=json", updateChart(100));
-}
+//function updateData() {
+	//$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart="+xValue+"&ystart="+yValue+"&length="+newDataCount+"&type=json", updateChart(100));
+//}
 
 
 // generates first set of dataPoints 
