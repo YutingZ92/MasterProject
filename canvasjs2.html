@@ -85,30 +85,30 @@ var dataLength = 10; // number of dataPoints visible at any point
 var time = new Date();
 
 
-var updateChart = function (count) {
-	count = count || 1;
+var updateChart = function () {
+	//count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
-    var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
-    var i;
-	for (i = 0; i <count; i++) {
+    	var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
+    	var i;
+	//for (i = 0; i <count; i++) {
 		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time.getTime() + updateInterval, //time.getTime(),//currentMinute + i * 60000,
+			x : currentDate, //time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints2.push({
-			x: time.getTime() + updateInterval,//currentMinute + i * 60000,
+			x: currentDate,//currentMinute + i * 60000,
            		y : Math.random()
 		});
 		dataPoints3.push({
-			x: time.getTime() + updateInterval,//currentMinute + i * 60000,
+			x: currentDate,//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints4.push({
-			x: time.getTime() + updateInterval,//currentMinute + i * 60000,
+			x: currentDate,//currentMinute + i * 60000,
 			//y: yValue4
 			y : Math.random()
 		});
@@ -142,7 +142,7 @@ var updateChart = function (count) {
 
 
 // generates first set of dataPoints 
-updateChart(dataLength);
+updateChart();
 setInterval(function () { updateChart() }, updateInterval);
 
 
