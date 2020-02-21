@@ -113,7 +113,7 @@ var updateChart = function (count) {
 			//y: yValue4
 			y : Math.random()
 		});
-		xVal+= updateInterval;
+		//xVal+= updateInterval;
 		
 		if(dataPoints1.length > dataLength){
 			dataPoints1.shift();
@@ -144,7 +144,7 @@ var updateChart = function (count) {
 
 
 // generates first set of dataPoints 
-updateChart(100);
+updateChart(dataLength);
 setInterval(function () { updateChart() }, updateInterval);
 
 
