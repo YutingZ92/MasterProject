@@ -96,19 +96,19 @@ var updateChart = function (count) {
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time.getTime(),//currentMinute + i * 60000,
+			x : time.getTime() + updateInterval, //time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints2.push({
-			x: time.getTime(),//currentMinute + i * 60000,
+			x: time.getTime() + updateInterval,//currentMinute + i * 60000,
            		y : Math.random()
 		});
 		dataPoints3.push({
-			x: time.getTime(),//currentMinute + i * 60000,
+			x: time.getTime() + updateInterval,//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints4.push({
-			x: time.getTime(),//currentMinute + i * 60000,
+			x: time.getTime() + updateInterval,//currentMinute + i * 60000,
 			//y: yValue4
 			y : Math.random()
 		});
