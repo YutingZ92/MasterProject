@@ -14,7 +14,7 @@ var options = {
 		text: "CPU"
 	},
 	axisX: {
-		title: "chart updates every 2 secs"
+		title: "chart updates every 6 secs"
 	},
 	axisY: {
 		suffix: "%",
@@ -100,19 +100,19 @@ var updateChart = function (count) {
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time.getTime()+i * 60000,//currentMinute + i * 60000,
+			x : time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints2.push({
-			x: time.getTime()+i * 60000,//currentMinute + i * 60000,
+			x: time.getTime(),//currentMinute + i * 60000,
            		y : Math.random()
 		});
 		dataPoints3.push({
-			x: time.getTime()+i * 60000,//currentMinute + i * 60000,
+			x: time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints4.push({
-			x: time.getTime()+i * 60000,//currentMinute + i * 60000,
+			x: time.getTime(),//currentMinute + i * 60000,
 			//y: yValue4
 			y : Math.random()
 		});
