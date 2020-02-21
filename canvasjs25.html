@@ -98,8 +98,8 @@ var time = new Date();
 var updateChart = function (count) {
 	count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
-	//var currentDate = new Date();
-    	//var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
+	var currentDate = new Date();
+    	var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     	//var time = currentMinute;
 
     	//var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
@@ -109,7 +109,7 @@ var updateChart = function (count) {
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time.getTime(),//currentMinute + i * 60000,
+			x : time + i*1000;//time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints2.push({
