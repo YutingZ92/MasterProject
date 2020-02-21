@@ -86,8 +86,8 @@ var time = new Date();
 
 
 
-function updateChart () {
-	//count = count || 1;
+function updateChart (count) {
+	count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
     	var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
@@ -95,16 +95,16 @@ function updateChart () {
 
     	//var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     	var i;
-	for (i = -12; i <= 0; i++) {
+	for (i = 0; i <= count; i++) {
 		//time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
 		dataPoints1.push({
-			x : time + i * 60000,//time.getTime(),//currentMinute + i * 60000,
+			x : time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints2.push({
-			x: time + i * 60000,//currentMinute + i * 60000,
+			x: time.getTime(),//currentMinute + i * 60000,
            		y : Math.random()
 		});
 		dataPoints3.push({
@@ -112,7 +112,7 @@ function updateChart () {
             		y : Math.random()
 		});
 		dataPoints4.push({
-			x: time + i * 60000,//currentMinute + i * 60000,
+			x: time.getTime(),//currentMinute + i * 60000,
 			//y: yValue4
 			y : Math.random()
 		});
@@ -147,17 +147,18 @@ function updateChart () {
 
 
 // generates first set of dataPoints 
-updateChart();
-setInterval(function () { updateChart() }, updateInterval);
+//updateChart();
+//setInterval(function () { updateChart() }, updateInterval);
 
 
 
-//$(document).ready(function() {
-    //setInterval(function () { updateDate() }, updateInterval);
+$(document).ready(function() {
+	updateChart(dataLength);
+    	setInterval(function () { updateDate() }, updateInterval);
     //setInterval(function () { updateChart() }, updateInterval);
     
  
-//});
+});
 
 
 
