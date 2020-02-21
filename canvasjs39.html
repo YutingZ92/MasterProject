@@ -89,9 +89,9 @@ function updateChart(count) {
 	count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
-  	var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
+  	var currentMinute = currentDate.getTime() - currentDate.getSeconds() * 1000;
   	var i;
-	for (i = -count; i <=0; i++) {
+	for (i = -count; i <0; i++) {
 		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
