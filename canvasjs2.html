@@ -81,7 +81,7 @@ var yValue1 = 0;
 var yValue2 = 0;
 var yValue3 = 0;
 var yValue4 = 0;
-var dataLength = 10; // number of dataPoints visible at any point 
+var dataLength = 15; // number of dataPoints visible at any point 
 var time = new Date();
 
 
@@ -96,7 +96,7 @@ var updateChart = function (count) {
     	//var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     	var i;
 	for (i = 0; i <= count; i++) {
-		//time.setTime(time.getTime() + updateInterval);		
+		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
 		dataPoints1.push({
