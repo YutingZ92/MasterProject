@@ -83,6 +83,12 @@ var yValue3 = 0;
 var yValue4 = 0;
 var dataLength = 15; // number of dataPoints visible at any point 
 var time = new Date();
+
+time.setHours(time.getHours());
+time.setMinutes(time.getMinutes());
+time.setSeconds(time.getSeconds());
+time.setMilliseconds(time.getMilliseconds());
+
 //var currentDate = new Date();
 //var currentMinute = currentDate.getTime()- currentDate.getSeconds() * 1000;
 //var time = currentMinute;
