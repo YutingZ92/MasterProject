@@ -78,16 +78,16 @@ function toggleDataSeries(e) {
 var updateInterval = 60000;
 // initial value
 var yValue1 = 0;
-var yValue2 = 0;
-var yValue3 = 0;
-var yValue4 = 0;
+var yValue2 = 1;
+var yValue3 = 3;
+var yValue4 = 5;
 var dataLength = 10; // number of dataPoints visible at any point 
 var time = new Date();
 
 
 
 function updateChart (count) {
-	//count = count || 1;
+	count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
     	var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
@@ -95,7 +95,7 @@ function updateChart (count) {
 
     	//var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     	var i;
-	for (i = -12; i <= 0; i++) {
+	for (i = 0; i <= count; i++) {
 		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
