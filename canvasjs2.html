@@ -86,13 +86,13 @@ var time = new Date();
 var xVal = time;
 
 
-var updateChart = function () {
-	//count = count || 1;
+var updateChart = function (count) {
+	count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	var currentDate = new Date();
     	var currentMinute = currentDate.getTime();// - currentDate.getSeconds() * 1000;
     	var i;
-	//for (i = 0; i <count; i++) {
+	for (i = 0; i <count; i++) {
 		time.setTime(time.getTime() + updateInterval);		
 
 		// pushing the new values
@@ -128,7 +128,7 @@ var updateChart = function () {
 			dataPoints4.shift();
 		}
 		
-	//}
+	}
 	//chart.options.data[0].dataPoints.push({x: new Date(), y: 5});
 	// updating legend text with  updated with y Value 
 	//options.data[0].legendText = "Turbine 1 : " + yValue1 + "Wh";
@@ -144,7 +144,7 @@ var updateChart = function () {
 
 
 // generates first set of dataPoints 
-updateChart();
+updateChart(100);
 setInterval(function () { updateChart() }, updateInterval);
 
 
