@@ -81,7 +81,7 @@ var yValue1 = 0;
 var yValue2 = 0;
 var yValue3 = 0;
 var yValue4 = 0;
-var dataLength = 100; // number of dataPoints visible at any point 
+var dataLength = 10; // number of dataPoints visible at any point 
 var time = new Date();
 
 
@@ -108,7 +108,7 @@ function updateChart (count) {
            		y : Math.random()
 		});
 		dataPoints3.push({
-			x: time + i * 60000,//currentMinute + i * 60000,
+			x: time.getTime(),//currentMinute + i * 60000,
             		y : Math.random()
 		});
 		dataPoints4.push({
