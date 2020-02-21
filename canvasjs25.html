@@ -84,10 +84,10 @@ var yValue4 = 0;
 var dataLength = 10; // number of dataPoints visible at any point 
 var time = new Date();
 
-time.setHours(time.getHours());
-time.setMinutes(time.getMinutes());
-time.setSeconds(time.getSeconds());
-time.setMilliseconds(time.getMilliseconds());
+//time.setHours(time.getHours());
+//time.setMinutes(time.getMinutes());
+//time.setSeconds(time.getSeconds());
+//time.setMilliseconds(time.getMilliseconds());
 
 //var currentDate = new Date();
 //var currentMinute = currentDate.getTime()- currentDate.getSeconds() * 1000;
@@ -95,7 +95,7 @@ time.setMilliseconds(time.getMilliseconds());
 
 
 
-function updateChart (count) {
+var updateChart = function (count) {
 	count = count || 1;
 	//var deltaY1, deltaY2, deltaY3;
 	//var currentDate = new Date();
