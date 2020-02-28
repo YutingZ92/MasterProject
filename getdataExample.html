@@ -1,26 +1,48 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="UTF-8" />
-<title>MODEL PAGE</title>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript">
-    var Ajax = function ()
-    {
-        $.getJSON ("heros.json.txt", function (data)
-        {
-            $.each (data, function (i, item)
-            {
-                $ ("#disp").append ("<h3>" + item.name + "</h3>");
-                $ ("#disp").append ("<p>" + item.sex + "</p>");
-				$ ("#disp").append ("<p>" + item.email + "</p>");
-            });
-        });
-    }
-</script>
-</head>
-<body>
-    <input type="button" value="Ajax提交" οnclick="Ajax();" />
-    <div id="disp"></div>
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> New Document </TITLE>
+  <META NAME="Generator" CONTENT="EditPlus">
+  <META NAME="Author" CONTENT="">
+  <META NAME="Keywords" CONTENT="">
+  <META NAME="Description" CONTENT="">
+  <script src="jquery-1.8.2.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+  <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+ 
+  <script>
+ 
+  $(function(){
+	//$("#loaddata").click(function(){
+       $(document).ready(function(){
+		//使用getJSON方法读取json数据,
+		//注意：info.json可以是不同类型文件，只要其中的数据为json类型即可
+		$.getJSON('heros.json',function(data){
+ 
+			var html = '';
+			$.each(data,function(i,item){
+			html += '<tr><td>'+item['name']+'</td>'+
+			'<td>'+item['sex']+'</td>'+
+			'<td>'+item.address+'</td>'+
+			'<td>'+item['home']+'</td></tr>';
+			});
+			$('#title').after(html); 
+			//after方法:在每个匹配的元素之后插入内容。
+		});
+	});
+  });
+ 
+ 
+//注:可以是item.address,也可以是item['address']
+  //firefox报 json文件中 “语法错误 [”,单能加载数据
+  //ie chrome 无法加载数据
+  </script>
+ </HEAD>
+<input type="button" value="加载数据" id="loaddata" />
+ 
+ <BODY>
+  <table id="infotable" >
+  <tr id="title"><th>姓名</th><th>性别</th><th>地址</th><th>主页</th></tr>
+  </table>
+ </BODY>
+</HTML>
