@@ -17,7 +17,7 @@
        $(document).ready(function(){
 		//使用getJSON方法读取json数据,
 		//注意：info.json可以是不同类型文件，只要其中的数据为json类型即可
-		$.getJSON('heros.json.txt',function(data){
+		$.getJSON("https://raw.githubusercontent.com/YutingZ92/MasterProject/master/heros.json.txt",function(data){
  
 			var html = '';
 			$.each(data,function(i,item){
