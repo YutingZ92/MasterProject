@@ -6,10 +6,12 @@
 <body>
   <p id="msg">this is a block</p>
   <script>
-    var socket = io.connect('http://localhost');
-    socket.on('news', function(data) {
-      console.log(data);
-      socket.emit('my other event', {my: 'data'});
+    
+    var socket = io("http://localhost:3000");
+            // use your socket
+    socket.on("welcome", (message) => {
+                // do something with the message.    
+    
     });
   </script>
 </body>
