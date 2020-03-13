@@ -8,10 +8,12 @@
   <script>
     
     var socket = new io.Socket();
-    socket.connect('http://vm.public-node-1-128.ch-geni-net.lan.sdn.uky.edu/index.html:80);
-    socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
+    socket.connect('http://vm.public-node-1-128.ch-geni-net.lan.sdn.uky.edu/index.html:80');
+    socket.on('connect', function () {
+    console.log("socket connected");
+    });
+    
+    socket.emit('my other message', { msg: 'OK?' });
   });
   </script>
 </body>
