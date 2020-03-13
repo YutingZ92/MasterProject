@@ -1,16 +1,8 @@
-var app = require('http').createServer(handler)
-var io = require('socket.io')(app);
+const io = require("socket.io");
+const server = io.listen(80);
 
-app.listen(80);
-// WARNING: app.listen(80) will NOT work here!
-
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+server.on("connection", function(socket) {
+  console.log("user connected");
+  socket.emit("welcome", "welcome man");
 });
 
-io.on('connection', function (socket) {
-  socket.emit('news', { hello: 'world' });
-  socket.on('my other event', function (data) {
-    console.log(data);
-  });
-});
