@@ -1,7 +1,7 @@
 
 var io = require('socket.io');
 var server = require('http').createServer();
-server.listen(3000,"http://vm.public-node-1-128.ch-geni-net.lan.sdn.uky.edu");
+server.listen(80,"http://128.163.232.70");
 var sockets = io.listen(server);
 
 sockets.on('connection', function (socket) {
