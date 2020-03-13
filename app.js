@@ -1,25 +1,17 @@
-var http = require('http');
-var fs = require('fs');
-function onRequest(req, res) {
-  fs.readFile(__dirname + '/index.html', function(err, data) {
-    if (err) {
-      res.writeHead(500);
-       return res.end('error loading index.html');
-    }
-    res.writeHead(200);
-    res.end(data);
-  })
-}
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-var app = http.createServer(onRequest);
-var io = require('socket.io')(app);
-io.on('connection', function(socket) {
-  socket.emit('news', 'Hello world');
-  socket.on('my other event', function(data) {
+server.listen(80);
+// WARNING: app.listen(80) will NOT work here!
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+});
+
+io.on('connection', function (socket) {
+  socket.emit('news', { hello: 'world' });
+  socket.on('my other event', function (data) {
     console.log(data);
-  })
-})
-
-app.listen(8001, function() {
-  console.log('listen on 8001')
-})
+  });
+});
