@@ -1,8 +1,8 @@
 
 var io = require('socket.io');
 var server = require('http').createServer();
-//server.listen(80,"http://128.163.232.70");
-server.listen(80);
+server.listen(80,"http://128.163.232.70");
+//server.listen(80);
 var sockets = io.listen(server);
 
 sockets.on('connection', function (socket) {
