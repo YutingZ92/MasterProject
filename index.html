@@ -7,8 +7,9 @@
   <p id="msg">this is a block</p>
   <script>
     
-    var socket = new io.Socket();
-    socket.connect('http://vm.public-node-1-128.ch-geni-net.lan.sdn.uky.edu/index.html:3000');    
+    
+    
+    var socket = io.connect('http://localhost'); 
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
     console.log(data.hello);
     });
