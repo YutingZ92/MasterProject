@@ -7,12 +7,12 @@
   <p id="msg">this is a block</p>
   <script>
     
-    var socket = io("http://localhost:3000");
-            // use your socket
-    socket.on("welcome", (message) => {
-                // do something with the message.    
-    
-    });
+    var socket = new io.Socket();
+    socket.connect('http://vm.public-node-1-128.ch-geni-net.lan.sdn.uky.edu/index.html:80);
+    socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
   </script>
 </body>
 
