@@ -12,11 +12,15 @@ const readFile = new SelfReloadJSON({
     additive: false,
     delay: 500
   });
-console.log('Read contents:', readFile);
+
+//const object = JSON.parse(readFile);
+//console.log(JSON.stringify(object, null, "  "));
+console.log(Object.keys(readFile)[0]);
 readFile.on('updated', () => {
     console.log('File Updated:', readFile);
     setTimeout(() => {
-      readFile.save();
+      //readFile.save();
+      console.log(Object.keys(readFile)[0]);
     }, 100);
   })
   readFile.on('error', (err) => {
