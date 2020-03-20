@@ -16,7 +16,6 @@
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
     console.log(data.hello);
     });
-    
     socket.emit('my new event', { my: 'new data' });
     
   </script>
