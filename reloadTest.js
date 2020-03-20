@@ -1,4 +1,4 @@
-(() => {
+
   const SelfReloadJSON = require('self-reload-json');
   
   const watchFile = new SelfReloadJSON({
@@ -16,4 +16,4 @@
   watchFile.on('error', (err) => {
     console.log('Error while refreshing:', err.message || err);
   })
-})();
+
