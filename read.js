@@ -12,7 +12,7 @@ const readFile = new SelfReloadJSON({
     additive: false,
     delay: 500
   });
-
+console.log('Read contents:', readFile);
 readFile.on('updated', () => {
     console.log('File Updated:', readFile);
     setTimeout(() => {
