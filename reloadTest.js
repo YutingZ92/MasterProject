@@ -6,6 +6,7 @@
     additive: false,
     delay: 500
   });
+  console.log('File content:', Object.keys(watchFile)[0]);
   watchFile.on('updated', () => {
     console.log('File Updated:', watchFile);
     setTimeout(() => {
