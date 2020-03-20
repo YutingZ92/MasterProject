@@ -19,7 +19,7 @@ console.log(Object.keys(readFile)[0]);
 readFile.on('updated', () => {
     console.log('File Updated:', readFile);
     setTimeout(() => {
-      //readFile.save();
+      readFile.save();
       console.log(Object.keys(readFile)[0]);
     }, 100);
   })
