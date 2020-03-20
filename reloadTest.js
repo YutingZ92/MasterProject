@@ -1,5 +1,6 @@
 (() => {
-  const SelfReloadJSON = require('./lib/');
+  const SelfReloadJSON = require('self-reload-json');
+  
   const watchFile = new SelfReloadJSON({
     fileName: './node_modules/self-reload-json/test.json',
     additive: false,
