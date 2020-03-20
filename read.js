@@ -8,7 +8,7 @@ var sockets = io.listen(server);
 var SelfReloadJSON = require('self-reload-json');
 
 const readFile = new SelfReloadJSON({
-    fileName: './test.json',
+    fileName: './self-reload-json/test.json',
     additive: false,
     delay: 500
   });
