@@ -30,7 +30,8 @@ readFile.on('updated', () => {
 
 sockets.on('connection', function (socket) {
   console.log('connection start');
-  socket.emit('news', { hello: 'world' });//监听，一旦客户端连接上，即发送数据，第一个参数'new'为数据名，第二个参数既为数据  
+  socket.emit('news', { hello: 'world' });//监听，一旦客户端连接上，即发送数据，第一个参数'new'为数据名，第二个参数既为数据 
+  socket.emit('news', { hello: Object.keys(readFile)[0] });
   console.log('sent sucessfully');
   socket.on('my other event', function (data) {//得到client的 数据名为'my other event' 的数据
   console.log(data.my);
