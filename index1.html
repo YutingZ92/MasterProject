@@ -8,7 +8,7 @@
   <script>
     
     
-    
+    console.log('start');
     var socket = io.connect('http://204.102.244.55:8000'); 
     console.log('connect');
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
