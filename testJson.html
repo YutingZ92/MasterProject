@@ -1,54 +1,66 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Request JSON Test</title>
-  </head>
-  <body>
-    <a href="#" id="get-data">Get JSON data</a>
-    <div id="show-data"></div>
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script src="example.js"></script>
+<head>
+<script>
+window.onload = function () {
 
-    $(document).ready(function () {
-  $('#get-data').click(function () {
-    var showData = $('#show-data');
+var dataPoints1 = [];
+var dataPoints2 = [];
+var dataPoints3 = [];
+var dataPoints4 = [];
+var dps = [];
+var updateInterval = 2000;
 
-    $.getJSON('https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/my_website/1.json', function (data) {
+
+
+
+// initial value
+var yValue1 = 0;
+var yValue2 = 0;
+var yValue3 = 0;
+var yValue4 = 0;
+var dataLength = 50; // number of dataPoints visible at any point 
+
+
+$.getJSON('https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/my_website/1.json', function (data) {
       console.log(data);
 
       
       });
 
-      showData.empty();
+updateChart();
 
-      if (items.length) {
-        var content = '<li>' + items.join('</li><li>') + '</li>';
-        var list = $('<ul />').html(content);
-        showData.append(list);
-      }
-    });
 
-    showData.text('Loading the JSON file.');
-    updateChart();
-  });
 
-  var updateInterval = 2000;
+
   function updateChart() {
   $.getJSON('https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/my_website/1.json', function(result) {
-    console.log(result);;
+    console.log('result:', result);
       
   });
 
 
   
-  setTimeout(function(){updateChart()}, updateInterval);
+  setTimeout(function(){updateChart()}, updateInterval);	
+
+		
+
 }
 
 
 
 
 
-});
-  </body>
+
+}
+
+
+
+</script>
+</head>
+<body>
+<div id="chartContainer" style="height: 300px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+<script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+</body>
 </html>
