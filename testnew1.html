@@ -67,7 +67,7 @@ var options = {
 	}]
 };
 
-var chart = $("#chartContainer").CanvasJSChart(options);
+//var chart = $("#chartContainer").CanvasJSChart(options);
 
 function toggleDataSeries(e) {
 	if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
@@ -88,7 +88,45 @@ var yValue4 = 0;
 var dataLength = 50; // number of dataPoints visible at any point 
 var time = new Date();
 
+$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
+    $.each(data, function(key, value){
+        dataPoints1.push({x: value[0], y: parseInt(value[1])});
+    });
+    var chart = $("#chartContainer").CanvasJSChart(options);
+    
+    chart.render();
+    updateChart();
+});
 
+$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
+    $.each(data, function(key, value){
+        dataPoints2.push({x: value[0], y: parseInt(value[1])});
+    });
+    var chart = $("#chartContainer").CanvasJSChart(options);
+    
+    chart.render();
+    updateChart();
+});
+
+$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
+    $.each(data, function(key, value){
+        dataPoints3.push({x: value[0], y: parseInt(value[1])});
+    });
+    var chart = $("#chartContainer").CanvasJSChart(options);
+    
+    chart.render();
+    updateChart();
+});
+
+$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
+    $.each(data, function(key, value){
+        dataPoints4.push({x: value[0], y: parseInt(value[1])});
+    });
+    var chart = $("#chartContainer").CanvasJSChart(options);
+    
+    chart.render();
+    updateChart();
+});
 
 
 function updateChart(count) {
