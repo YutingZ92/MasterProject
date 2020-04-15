@@ -1,0 +1,31 @@
+<head>
+  <title>using with node http server</title>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+  <p id="msg">this is a block</p>
+  <script>
+    
+      
+    var socket = io.listen(8003); 
+    socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
+    console.log(data.value);
+    });
+    
+    socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
+    console.log(data.value);
+    });
+    
+    socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
+    console.log(data.value);
+    });
+    
+    socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
+    console.log(data.value);
+    });
+    
+    socket.emit('my new event', { my: 'new data' });
+  });
+  </script>
+</body>
