@@ -1,6 +1,6 @@
 var io = require('socket.io');
 var server = require('http').createServer();
-server.listen(8001, '0.0.0.0'); //need change port number every time
+server.listen(8003, '0.0.0.0'); //need change port number every time
 var sockets = io.listen(server);
 
 //----socket set up-----
