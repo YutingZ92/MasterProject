@@ -18,11 +18,14 @@ var options = {
 		text: "CPU"
 	},
 	axisX: {
-		title: "chart updates every 0.2 secs"
+		title: "chart updates every 1 secs"
 	},
 	axisY: {
 		suffix: "%",
 		includeZero: false
+		minimum: -1,
+    		maximum: 120,
+    		interval: 10,
 	},
 	toolTip: {
 		shared: true
@@ -37,7 +40,7 @@ var options = {
 	data: [{
 		type: "spline",
 		xValueType: "dateTime",
-		yValueFormatString: "##.00%",
+		yValueFormatString: "##.00",
 		xValueFormatString: "hh:mm:ss TT",
 		showInLegend: true,
 		name: "Node 1",
@@ -46,21 +49,21 @@ var options = {
 	{
 		type: "spline",
 		xValueType: "dateTime",
-		yValueFormatString: "##.00%",
+		yValueFormatString: "##.00",
 		showInLegend: true,
 		name: "Node 2",
 		dataPoints: dataPoints2
 	}, {
 		type: "spline",
 		xValueType: "dateTime",
-		yValueFormatString: "##.00%",
+		yValueFormatString: "##.00",
 		showInLegend: true,
 		name: "Node 3",
 		dataPoints: dataPoints3
 	},{
 		type: "spline",
 		xValueType: "dateTime",
-		yValueFormatString: "##.00%",
+		yValueFormatString: "##.00",
 		showInLegend: true,
 		name: "Node 4",
 		dataPoints: dataPoints4
