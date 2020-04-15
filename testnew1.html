@@ -108,47 +108,51 @@ function updateChart(count) {
 
 		// pushing the new values
 
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
-    	$.each(data, function(key, value){
-        
+		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+
+
+
     
 		dataPoints1.push({
 			x : currentMinute + i * 2000,
 
-            		y : parseInt(value[1])
+            		y : parseInt(result)
 		});
 
 		});
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
-    	$.each(data, function(key, value){
-        
+		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+
+
+
     
 		dataPoints2.push({
 			x : currentMinute + i * 2000,
 
-            		y : parseInt(value[1])
+            		y : parseInt(result)
 		});
 
 		});
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
-    	$.each(data, function(key, value){
-        
+		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+
+
+
     
 		dataPoints3.push({
 			x : currentMinute + i * 2000,
 
-            y : parseInt(value[1])
+            		y : parseInt(result)
 		});
 
 		});
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(data) {  
-    	$.each(data, function(key, value){
-        
+		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+
+
+
     
 		dataPoints4.push({
 			x : currentMinute + i * 2000,
 
-            y : parseInt(value[1])
+            		y : parseInt(result)
 		});
 
 		});
@@ -166,7 +170,7 @@ function updateChart(count) {
 			dataPoints4.shift();
 		}
 		
-	}
+	
 	//chart.options.data[0].dataPoints.push({x: new Date(), y: 5});
 	// updating legend text with  updated with y Value 
 	//options.data[0].legendText = "Turbine 1 : " + yValue1 + "Wh";
