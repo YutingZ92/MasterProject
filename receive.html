@@ -1,31 +1,38 @@
+<!DOCTYPE html>
+<html>
 <head>
   <title>using with node http server</title>
-  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
   <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 </head>
 <body>
   <p id="msg">this is a block</p>
   <script>
     
-      
-    var socket = io.listen(8003); 
+    
+    console.log('start');
+    var socket = io.connect('http://204.102.244.55:8003'); 
+    console.log('connect');
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
     console.log(data.value);
     });
-    
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
     console.log(data.value);
     });
-    
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
     console.log(data.value);
     });
-    
     socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
     console.log(data.value);
     });
-    
+    socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
+    console.log(data.value);
+    });
+    socket.on('news', function (data) {//接收到服务器发送过来的名为'new'的数据 
+    console.log(data.value);
+    });
     socket.emit('my new event', { my: 'new data' });
-  });
+    
   </script>
 </body>
+</html>
