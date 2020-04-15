@@ -66,10 +66,12 @@ var options = {
 		dataPoints: dataPoints4
 	}]
 };
-dataPoints1.push({x:0,y:1});
-dataPoints2.push({x:0,y:2});
-dataPoints3.push({x:0,y:3});
-dataPoints4.push({x:0,y:4});
+
+var time = new Date();
+dataPoints1.push({x:time.getTime(),y:0});
+dataPoints2.push({x:time.getTime(),y:0});
+dataPoints3.push({x:time.getTime(),y:0});
+dataPoints4.push({x:time.getTime(),y:0});
 var chart = $("#chartContainer").CanvasJSChart(options);
 
 
@@ -90,7 +92,7 @@ var yValue2 = 0;
 var yValue3 = 0;
 var yValue4 = 0;
 var dataLength = 50; // number of dataPoints visible at any point 
-var time = new Date();
+
 
 
 
@@ -108,7 +110,7 @@ function updateChart(count) {
 
 		// pushing the new values
 
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+		$.getJSON("https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/1.json", function(result) {  
 
 
 
@@ -116,11 +118,11 @@ function updateChart(count) {
 		dataPoints1.push({
 			x : currentMinute + i * 2000,
 
-            		y : parseInt(result)
+            y : parseInt(result)
 		});
 
 		});
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+		$.getJSON("https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/2.json", function(result) {  
 
 
 
@@ -128,11 +130,11 @@ function updateChart(count) {
 		dataPoints2.push({
 			x : currentMinute + i * 2000,
 
-            		y : parseInt(result)
+            y : parseInt(result)
 		});
 
 		});
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+		$.getJSON("https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/3.json", function(result) {  
 
 
 
@@ -144,7 +146,7 @@ function updateChart(count) {
 		});
 
 		});
-		$.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart=1&ystart=10&length=10&type=json", function(result) {  
+		$.getJSON("https://Controller.Controller-YZ.ch-geni-net.instageni.cenic.net/4.json", function(result) {  
 
 
 
